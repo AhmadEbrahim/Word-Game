@@ -1,0 +1,59 @@
+make_dictionary(size): btraga3 kol el kalemat ely f el dictionary ely leha nafs elsize 
+------------------------------------------------------------------------------
+is_goal(self, state): returns true if the given state is the goal word
+------------------------------------------------------------------------------
+clear_visited(self): clears the list of all visited states
+------------------------------------------------------------------------------
+visit(self,state,node): notes the given state as visited and maps it to the given A* node
+------------------------------------------------------------------------------
+visited_state_node(self,state): if the given node has alredy been visited, return the associated A* node, otherwise return none 
+------------------------------------------------------------------------------
+heuristic_null(self,state): returns a null heuristic (i.e., 0 for any state)
+------------------------------------------------------------------------------
+heuristic_custom(self,state):returns a custom herusitic value "hane3melha"
+------------------------------------------------------------------------------
+heruistic(self,state):returns an admissible, consistent heruistic value for the given state, using our known goal word.  dispatches to heruistic_null() or heruistic_custom() depending on command line options
+------------------------------------------------------------------------------
+successors(self,state): btrag3 two lists whada feha el successors ely a2adra aro7lohom w wahda feha el cost 3shan awsal l kol wahda mn el successors dol
+------------------------------------------------------------------------------
+branching_factor(self):returns the avg branching factor of the tree after a successful search
+------------------------------------------------------------------------------
+node_bf(self,node):ehsta 3l dehk
+------------------------------------------------------------------------------
+run_game():runs a change-a-letter search for start and goal words given in the command-line arguments
+******************************************************************************
+******************************************************************************
+******************************************************************************fibheap
+is_empty(self):returns true if the heap is empty, false otherwise 
+------------------------------------------------------------------------------
+clear(self):empties the heap
+------------------------------------------------------------------------------
+find_minimum(self):finds the minimum-valued node in the current root set
+------------------------------------------------------------------------------
+merge(self,other):btgama3 el fibo heap f heap wahda 3adya 
+------------------------------------------------------------------------------
+insert(self,key,data):inserts a new node inte the heap with a given key and data, returns the fibo node holding the given values
+------------------------------------------------------------------------------
+peek_minimum(self):returns the (key,data) pair of the minimally-valued fibo node in the heap and removes that node from the heap 
+------------------------------------------------------------------------------
+cut_node(self,node):removes the given node from its parent makes it a root node and returns the parent node
+------------------------------------------------------------------------------
+decrease_key(self,node,key):decreases the key on the given node to the new value 
+------------------------------------------------------------------------------
+delete(self,node):deletes the given node from the tree
+******************************************************************************
+******************************************************************************
+******************************************************************************A*fibheap
+set_start(self,start):sets the given state as the start state for the search and initializes the search treee and parameters 
+------------------------------------------------------------------------------
+serach(self):run a search to completion or failure,retyrns true is the solution is found and false on failure
+------------------------------------------------------------------------------
+search_step(self):Perform one step of an A* search.  Return True if a goal state isfound, False otherwise.  A step is defined as removing one node from
+the fringe, generating its successors, testing the node or its successors for goal conditions (depending on the value of testGoalOnGeneration when the AStar object was created), and appending the successors to the priority-queue search fringe.((msh fahem deh))
+------------------------------------------------------------------------------
+num_nodes(self):returns the number of the nodes in the search tree
+------------------------------------------------------------------------------
+num_descendents(self,node):returns the number of descendents of the given search-tree node 
+------------------------------------------------------------------------------
+result_path(self):returns a list containing A* node instances from the start to the goal, will be empty unless a successful search has been run
+ 
